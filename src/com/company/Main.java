@@ -6,20 +6,20 @@
  */
 
 package com.company;
-
+// Import
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
-
+// Main class
 public class Main {
 
     public static void main(String[] args) {
-
+        // Display the menu for the user
         displaymenu();
     }
-
+    // Find the number in the file
     public static void findNumber(String number) {
 
         try(Scanner in = new Scanner(new File("file.txt"))) {
@@ -33,9 +33,9 @@ public class Main {
                     foundPerson = true;
                 }
             }
-
+            // Print a message if the number is not found
             if(!foundPerson) {
-                System.out.println("Could not find" + number);
+                System.out.println("Could not find " + number);
             }
 
         }catch(IOException e) {
@@ -43,7 +43,7 @@ public class Main {
         }
 
     }
-
+    // Find a contact name in the file
     public static void findName(String name) {
         try(Scanner in = new Scanner(new File("file.txt"))) {
             String ss[];
@@ -56,7 +56,7 @@ public class Main {
                     foundNumber = true;
                 }
             }
-
+            // Print a message if the name is not found
             if(!foundNumber) {
                 System.out.println("Could not find " + name);
             }
@@ -66,7 +66,7 @@ public class Main {
         }
 
     }
-
+    // Save a contact in the file
     public static void saveContact(String name, long number){
         System.out.println("Saving contact " + name + ":" + number);
 
